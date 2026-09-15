@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: midnightblue;
+  --accent1-color: #FAF5E9;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+
+h1 {
+  grid-column: 1/-1;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem;
+  
+}
+
+
+header span {
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+  display: block;  
+}
+
+.headerbar a {
+  
+}
+nav {
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+  text-align: center;
+}
+nav a {
+  text-decoration: none;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+
+
+nav a:hover {
+  border: 1px solid var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 1rem;
+  flex: 1 1 100%;
+}
+
+nav ul li a {
+  border: 2px solid var(--primary-color);
+  border-style: outset;
+  color: var(--primary-color);
+}
+
+main {
+  background-color: var(--primary-color);
+  color: var(--accent1-color);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
+
+
+  
+}
+
+
+.card {
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+}
+
+.card h2 {
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  text-align: center;
+}
+
+.card:nth-of-type(1) {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.who img {
+  float: right;
+  margin: 1rem;
+}
+
+.who p {
+ text-align: center;
+ margin: 1rem;
+ margin-top: 2rem;
+}
+
+.state {
+  text-align: center;
+  border-bottom: solid 2px var(--primary-color);
+}
+
+.where img {
+  float: left;
+  margin: 1rem;
+}
+
+.where p {
+  text-align: center;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+.studyhelp {
+  margin-top: 2rem;
+}
+
+.studyhelp li {
+  margin-top: 1rem;
+}
+
+
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  text-align: center;
+}
+
+#spade {
+  color: red;
+}
+#lastModified { 
+   color: yellow;
+}
