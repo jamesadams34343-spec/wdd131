@@ -45,7 +45,7 @@ nav , .studyhelp {
   color: var(--primary-color);
   text-align: center;
 }
-nav a , .studyhelp {
+nav a , .studyhelp a {
   text-decoration: none;
   padding: 4px 8px;
   font-size: 1rem;
