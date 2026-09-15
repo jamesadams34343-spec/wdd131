@@ -11,7 +11,9 @@
   box-sizing: border-box;
 }
 
-
+header {
+  
+}
 
 body {
   font-family: "Roboto", sans-serif;
@@ -37,9 +39,7 @@ header span {
   display: block;  
 }
 
-.headerbar a {
-  
-}
+
 nav {
   background-color: var(--accent1-color);
   color: var(--primary-color);
