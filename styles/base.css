@@ -146,7 +146,7 @@ footer {
 }
 
 #spade , #spade2 {
-  color: black;
+  color: var(--accent1-color);
 }
 #lastModified { 
    color: yellow;
