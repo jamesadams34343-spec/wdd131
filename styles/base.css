@@ -12,7 +12,7 @@
 }
 
 header {
-  
+
 }
 
 body {
@@ -40,12 +40,12 @@ header span {
 }
 
 
-nav {
+nav , .studyhelp {
   background-color: var(--accent1-color);
   color: var(--primary-color);
   text-align: center;
 }
-nav a {
+nav a , .studyhelp {
   text-decoration: none;
   padding: 4px 8px;
   font-size: 1rem;
