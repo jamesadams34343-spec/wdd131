@@ -1,0 +1,53 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: rgb(146, 232, 253);
+  --accent1-color: #FAF5E9;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header , main , footer {
+  background-color: var(--secondary-color);
+  max-width: 640px;
+  margin: 1rem auto
+  border 1px solid var(--primary-color)
+  padding 1rem
+  
+}
+
+header {
+  }
+
+h1 {
+  margin: 1rem;
+  padding: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+section {
+  background-color: var(--accent1-color);
+  padding: 1rem;
+  margin: 2rem;
+}
+
+footer {
+  margin: 1rem 0;
+  padding: 1rem;
+}
