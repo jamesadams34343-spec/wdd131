@@ -52,7 +52,6 @@ nav {
 	background-color: var(--secondary-color)
 }
 .navigation {
-  grid-column: 1fr;
   justify-self: end;
 	list-style: none;
 	margin: 0 auto;
