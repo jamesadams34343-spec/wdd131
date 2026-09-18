@@ -33,29 +33,61 @@ header p {
   font-size: larger;
 }
 
-nav ul li a {
+#menu {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
   text-decoration: none;
+  padding: .5rem .75rem;
+  background-color: var(--secondary-color);
   color: var(--accent1-color);
-  padding: 4px 8px;
 }
 
-
-
-nav ul {
-  display: flex;
-  list-style-type: none;
+#menu::before {
+  content: "≡";
+  float: right;
+  padding-right: 1rem;
 }
 
-nav ul li {
-  margin: 1rem;
-  flex: 1 1 100%;
+nav {
+	background-color: var(--secondary-color)
+}
+.navigation {
+  grid-column: ;
+  justify-self: end;
+	list-style: none;
+	margin: 0 auto;
+	max-width: 760px;
 }
 
-nav a:hover {
+.navigation li {
+	display: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+}
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	text-decoration: none;
+	color: var(--accent1-color);
+	transition: 0.5s;
+}
+
+.navigation a:hover,
+.navigation a:active {
   border: 1px solid var(--primary-color);
   background-color: var(--accent1-color);
   color: var(--secondary-color);
   border-radius: 10%;
+}
+
+.show li {
+  display: block;
+}
+
+#menu.show::before {
+  content: "𝓧";
 }
 
 

@@ -1,0 +1,54 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: rgb(70, 0, 128);
+  --accent1-color: #FAF5E9;
+
+}
+
+@media (min-width: 40em) {
+
+.navigation {
+  display: flex;
+  list-style-type: none;
+}
+
+.navigation li {
+  display: block; /*change state in small view */
+  margin: 1rem;
+  flex: 1 1 100%
+}
+
+.navigation a {
+  color: var(--accent1-color);
+  text-align: center;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.navigation a:hover {
+  border: 1px solid var(--primary-color);
+  background-color: var(--accent1-color);
+  color: var(--secondary-color);
+  border-radius: 10%;
+}
+
+#menu {
+  display: none;
+}
+
+main {
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+h1 {
+  grid-column: 1 / -1;
+}
+
+main figure {
+  padding: 1rem;
+  place-items: center;
+  text-align: center;
+}
+
+}
