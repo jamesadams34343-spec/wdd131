@@ -29,7 +29,6 @@ header {
 header p {
   color: var(--accent1-color);
   margin: 2rem;
-  font-style: bold;
   font-size: larger;
 }
 
@@ -53,7 +52,7 @@ nav {
 	background-color: var(--secondary-color)
 }
 .navigation {
-  grid-column: ;
+  grid-column: 1fr;
   justify-self: end;
 	list-style: none;
 	margin: 0 auto;
