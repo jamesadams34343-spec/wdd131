@@ -49,6 +49,7 @@ header p {
 }
 
 nav {
+  display: flex;
 	background-color: var(--secondary-color)
 }
 .navigation {
