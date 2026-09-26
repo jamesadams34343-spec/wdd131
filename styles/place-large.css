@@ -26,6 +26,10 @@ main h2 {
  
 }
 
+section img::after {
+  content: icon;
+}
+
 #data-heading {
   margin-top: 1rem;
   margin-left: -2rem;
