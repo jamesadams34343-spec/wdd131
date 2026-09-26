@@ -27,7 +27,8 @@ main h2 {
 }
 
 section img::after {
-  content: icon;
+  font-family: "Font Awesome 5 Free";
+  content: "\f000";
 }
 
 #data-heading {
