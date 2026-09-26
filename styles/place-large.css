@@ -1,0 +1,90 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: midnightblue;
+  --accent1-color: #FAF5E9;
+
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    position: relative;
+ 
+  
+  }
+header h1 {
+  width: 100%;
+  }
+header img {
+  display: block;
+  background-color: darkgreen;
+  padding-top: 1rem;
+  width: 100%
+  
+
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(1fr, 4);
+}
+
+main h2 {
+  background-color: darkgreen;
+ 
+}
+
+#data-heading {
+  margin-top: 1rem;
+  margin-left: -2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  color: white;
+}
+
+#weather-heading{
+  margin-top: rem;
+  margin-left: -2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: white;
+}
+
+#stat-data {
+  position: absolute;
+  top: 10rem;
+  left: 5rem;
+}
+
+#weather-conditions {
+  position: absolute;
+  padding-top: 1rem;
+  bottom: -5rem;
+  left: 5rem;
+}
+
+
+footer {
+  background-color: darkred;
+  padding: 3rem;
+
+}
+footer p {
+  width: 100%;
+
+}
+
+
+
+}
+
+@media screen and (min-width: 800px) {
+#weather-conditions {
+  position: absolute;
+  padding-top: 1rem;
+  bottom: -5rem;
+  right: 5rem;
+  left: auto;
+}
+
+
+}
