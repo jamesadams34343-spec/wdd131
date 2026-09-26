@@ -24,8 +24,7 @@ header img {
 }
 
 main {
-  display: grid;
-  grid-template-columns: repeat(1fr, 4);
+
 }
 
 main h2 {
@@ -42,7 +41,6 @@ main h2 {
 }
 
 #weather-heading{
-  margin-top: rem;
   margin-left: -2rem;
   margin-bottom: 2rem;
   text-align: left;
