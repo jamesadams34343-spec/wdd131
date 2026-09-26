@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"WDD 131 - Dynamic Web Fundamentals - James Adams"</title>
+  <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - James Adams - introduction home page">
+  <meta name="author" content="James Adams">
+  <link rel="stylesheet" href="styles/place.css">
+  <link rel="stylesheet" href="styles/place-large.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script defer src="scripts/place.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Logan, UT</h1>
+    <picture>
+      <source media="(min-width: 800px)" srcset="images/hero-large.webp">
+      <img src="images/hero-small.webp" alt="logan area picture">
+    </picture>
+    
+  </header>
+  <main>
+    <section id="stat-data">
+      <h2 id="data-heading">Data</h2>
+      <ul>
+        <li><p>Area: <span>18.43 square miles</span></p></li>
+        <li><p>Population: <span>54,907</span></p></li>
+        <li><p>County: <span>Cache</span></p></li>
+        <li><p>Languages: <span>English, Spanish</span></p></li>
+        <li><p>Currency: <span>United States Dollar</span></p></li>
+        <li><p>Time Zone: <span>Mountain Standard Time(Summer), MDT(daylight)(Winter)</span></p></li>
+        <li><p>Calling Code: <span>+1(Country) 435(local)</span></p></li>
+        <li><p>Internet TLD: <span>.com(generic), .gov(official), .edu(education)</span></p></li>
+      </ul>
+    </section>
+    <section id="weather-conditions">
+      <h2 id="weather-heading">Weather</h2>
+      <img src="images/clear-day.svg" alt="Wheather image">
+      <ul>
+        <li><p>Temperature: <span id="temp"></span><span> °F</span></p></li>
+        <li><p>Conditions: <span id="conditions">1234</span></p></li>
+        <li><p>Wind: <span id="wind"></span><span> mph</span></p></li>
+        <li><p>Wind Chill: <span id="wind-chill"></span></p></li>
+      </ul>
+    </section>
+
+  </main>
+  <footer>
+    <div>
+      <p>© <span id="current-year"></span><span id="spade"> ♠</span> James Adams <span id="spade2">♠</span> Utah</p>
+      <p>Last Modification: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+</body>
+</html>

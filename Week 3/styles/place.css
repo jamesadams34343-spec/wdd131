@@ -1,0 +1,94 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: midnightblue;
+  --accent1-color: #FAF5E9;
+  --basic-width: 40rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #FAF5E9;
+  text-align: center;
+  /* align-items: center; */
+}
+
+header h1 {
+  background-color: darkred;
+  width: var(--basic-width);
+  color: #FAF5E9;
+  justify-self: center;
+  padding: 0.5rem;
+
+}
+header img {
+  background-color: darkgreen;
+  padding-top: 1rem;
+  width: var(--basic-width);
+  height: auto;
+}
+main {
+background-color: #FAF5E9;
+text-align: center;
+padding-top: 0;
+
+}
+
+h2 {
+  background-color: white;
+  padding: 2rem;
+  width: var(--basic-width);
+  justify-self: center;
+}
+
+section {
+  background-color: #FAF5E9;
+  justify-self: center;
+}
+
+ul {
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+li {
+  padding: .5rem;
+}
+
+p {
+  font-weight: 700;
+}
+
+span { font-weight: 400;}
+
+#stat-data {
+  background-color: white;
+  width: var(--basic-width);
+
+}
+
+#weather-conditions {
+  background-color: white;
+  width: var(--basic-width);
+
+}
+
+#weather-conditions h2 {
+  margin-top: 2px;
+}
+
+footer {
+background-color: #FAF5E9;
+text-align: center;
+}
+
+footer p {
+  background-color: darkred;
+  color: white;
+  width: var(--basic-width);
+  justify-self: center;
+}
