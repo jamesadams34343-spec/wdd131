@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: rgb(70, 0, 128);
+  --accent1-color: #FAF5E9;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+header p {
+  color: var(--accent1-color);
+  margin: 2rem;
+  font-size: larger;
+}
+
+#menu {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: .5rem .75rem;
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+}
+
+#menu::before {
+  content: "≡";
+  float: right;
+  padding-right: 1rem;
+}
+
+nav {
+  display: flex;
+	background-color: var(--secondary-color)
+}
+.navigation {
+  justify-self: end;
+	list-style: none;
+	margin: 0 auto;
+	max-width: 760px;
+}
+
+.navigation li {
+	display: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+}
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: center;
+	text-decoration: none;
+	color: var(--accent1-color);
+	transition: 0.5s;
+}
+
+.navigation a:hover,
+.navigation a:active {
+  border: 1px solid var(--primary-color);
+  background-color: var(--accent1-color);
+  color: var(--secondary-color);
+  border-radius: 10%;
+}
+
+.show li {
+  display: block;
+}
+
+#menu.show::before {
+  content: "𝓧";
+}
+
+
+main  {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+main figure {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+  div {
+    border: solid 1px rgb(201, 201, 204);
+    background-color: rgb(235, 234, 238);
+    margin: .5rem;
+    text-align: center;
+  }
+
+  div h2 {
+    margin: 1rem;
+  }
+
+
+  div p {
+
+  }
+
+  div img {
+    width: 400px;
+    height: 250px;
+    margin: 1rem;
+    border: solid 1px rgb(235, 234, 238);
+    filter: drop-shadow(1rem 1rem 2rem rgba(0, 0, 0, 0.5));
+  }
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  text-align: center;
+}
