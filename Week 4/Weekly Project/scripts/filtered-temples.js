@@ -84,7 +84,7 @@ const temples = [
     {
     templeName: "Logan Utah",
     location: "Logan, Utah, United States",
-    dedicated: "1979, March, 15",
+    dedicated: "1884, May, 19",
     area: 119619,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
@@ -103,24 +103,60 @@ const temples = [
   // Add more temple objects here...
 ];
 
+function getYear(dateString) {
+  return parseInt(dateString.split(',')[0].trim());
+}
+
+const allTemplesLink = document.querySelector("#alltemples")
+const oldTemplesLink = document.querySelector("#oldtemples")
+const newTemplesLink = document.querySelector("#newtemples")
+const largeTemplesLink = document.querySelector("#largetemples")
+const smallTemplesLink = document.querySelector("#smalltemples")
+
+allTemplesLink.addEventListener("click", () => {
+  createTempleCard(temples);
+});
+
+oldTemplesLink.addEventListener("click", () => {
+  createTempleCard(temples.filter(temple => getYear(temple.dedicated) < 1900));
+});
+
+newTemplesLink.addEventListener("click", () => {
+  createTempleCard(temples.filter(temple => getYear(temple.dedicated) > 2000));
+});
+
+largeTemplesLink.addEventListener("click", () => {
+  createTempleCard(temples.filter(temple => temple.area > 90000));
+});
+
+smallTemplesLink.addEventListener("click", () => {
+  createTempleCard(temples.filter(temple => temple.area < 10000));
+});
+
+
 
 const container = document.getElementById('temple-container');
 
-temples.forEach(temple => {
-    const card = document.createElement('main');
-    card.className = 'temple-card';
+function createTempleCard(filteredTemples) {
+  container.innerHTML = ""
+  filteredTemples.forEach(temple => {
+      const card = document.createElement('div');
+      card.className = 'temple-card';
 
-    card.innerHTML =`
-        
-        <div class="temple-info">
-            <h2>${temple.templeName}</h2>
-            <p><strong>Location:</strong> ${temple.location}</p>
-            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-            <p><strong>Total Area:</stong> ${temple.area.toLocaleString()} sq ft</p>
-            <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy">
-        </div>
-        
-      `;
+      card.innerHTML =`
+          
+          <div class="temple-info">
+              <h2>${temple.templeName}</h2>
+              <p><strong>Location:</strong> ${temple.location}</p>
+              <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+              <p><strong>Total Area:</stong> ${temple.area.toLocaleString()} sq ft</p>
+              <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy" width="400" height="250">
+          </div>
+          
+        `;
 
-  container.appendChild(card);
-});
+    container.appendChild(card);
+  });
+}
+
+createTempleCard(temples);
