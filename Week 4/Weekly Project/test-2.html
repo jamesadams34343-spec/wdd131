@@ -1,0 +1,65 @@
+Here is how you can implement the filtering logic for your temple navigation menu.
+
+Assuming you are using JavaScript to filter an array of temple objects, you can use the .filter() method to display the correct data based on the selected menu item.
+
+
+JavaScript Filtering Logic
+
+
+
+javascript
+// Example array structure
+const temples = [
+  { name: "Salt Lake Temple", built: 1893, size: 253015 },
+  { name: "St. George Utah Temple", built: 1877, size: 143969 },
+  { name: "Palmyra New York Temple", built: 2000, size: 10700 },
+  { name: "San Antonio Texas Temple", built: 2005, size: 16800 },
+  { name: "Yigo Guam Temple", built: 2022, size: 6861 },
+  { name: "Washington D.C. Temple", built: 1974, size: 160000 }
+];
+
+// Function to filter temples based on the menu selection
+function filterTemples(category) {
+  let filteredTemples = [];
+
+  switch (category) {
+    case 'Old':
+      // Temples built before 1900
+      filteredTemples = temples.filter(temple => temple.built < 1900);
+      break;
+      
+    case 'New':
+      // Temples built after 2000
+      filteredTemples = temples.filter(temple => temple.built > 2000);
+      break;
+      
+    case 'Large':
+      // Temples larger than 90,000 square feet
+      filteredTemples = temples.filter(temple => temple.size > 90000);
+      break;
+      
+    case 'Small':
+      // Temples smaller than 10,000 square feet
+      filteredTemples = temples.filter(temple => temple.size < 10000);
+      break;
+      
+    case 'Home':
+    default:
+      // Displays all the temples stored in the array
+      filteredTemples = temples;
+      break;
+  }
+
+  // Call your function here to render the filteredTemples to the DOM
+  displayTemples(filteredTemples);
+}
+
+
+Integration Tips
+• Event Listeners: Attach click event listeners to your navigation menu links. Pass the corresponding string ('Old', 'New', 'Large', 'Small', or 'Home') into the filterTemples() function.
+• Boundary Check: Double-check if "built after 2000" should include the year 2000 itself. If it should include 2000, change temple.built > 2000 to temple.built >= 2000.
+If you want to finish building this navigation feature, tell me:
+• What programming language or framework (e.g., vanilla JS, React, Vue) you are using?
+• What your HTML/DOM structure looks like for the menu?
+• How your temple data object array is structured?
+I can provide the exact event listener code or DOM rendering function tailored to your project.

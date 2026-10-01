@@ -79,7 +79,7 @@ const temples = [
     dedicated: "2008, February, 10",
     area: 57504,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/rexburg-idaho-temple/rexburg-idaho-temple-6632-thumb.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/rexburg-idaho-temple/rexburg-idaho-temple-62899-main.jpg"
   },
     {
     templeName: "Logan Utah",
@@ -87,7 +87,7 @@ const temples = [
     dedicated: "1979, March, 15",
     area: 119619,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-22077-thumb.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
   },
     {
     templeName: "Red Cliffs Utah",
@@ -102,3 +102,25 @@ const temples = [
 
   // Add more temple objects here...
 ];
+
+
+const container = document.getElementById('temple-container');
+
+temples.forEach(temple => {
+    const card = document.createElement('main');
+    card.className = 'temple-card';
+
+    card.innerHTML =`
+        
+        <div class="temple-info">
+            <h2>${temple.templeName}</h2>
+            <p><strong>Location:</strong> ${temple.location}</p>
+            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+            <p><strong>Total Area:</stong> ${temple.area.toLocaleString()} sq ft</p>
+            <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy">
+        </div>
+        
+      `;
+
+  container.appendChild(card);
+});

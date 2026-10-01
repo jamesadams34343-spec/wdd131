@@ -1,0 +1,112 @@
+AI generated example:
+
+To loop through an array and generate HTML dynamically, you need to combine HTML for the structure and JavaScript to handle the loop.
+
+Here is a complete, ready-to-use example. It sets up a container in HTML, defines a sample array of temple data, and uses a JavaScript loop to dynamically generate and insert the "temple cards" with native lazy loading (loading="lazy").
+
+Complete HTML & JavaScript Code
+
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Display</title>
+    <style>
+        /* Basic styling for the card grid layout */
+        .temple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .temple-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .temple-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .temple-info {
+            padding: 15px;
+        }
+        .temple-info h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .temple-info p {
+            margin: 8px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Target container where the cards will be inserted -->
+    <div id="temple-container" class="temple-grid"></div>
+
+    <script>
+        // 1. Sample array representing your temple data
+        const temples = [
+            {
+                name: "Salt Lake Temple",
+                location: "Salt Lake City, Utah, United States",
+                dedicated: "April 6, 1893",
+                area: 253015,
+                imageUrl: "https://churchofjesuschrist.org"
+            },
+            {
+                name: "Rome Italy Temple",
+                location: "Rome, Italy",
+                dedicated: "March 10, 2019",
+                area: 40000,
+                imageUrl: "https://churchofjesuschrist.org"
+            }
+        ];
+
+        // 2. Select the container element
+        const container = document.getElementById('temple-container');
+
+        // 3. Loop through the array and create cards
+        temples.forEach(temple => {
+            // Create a temporary card element
+            const card = document.createElement('div');
+            card.className = 'temple-card';
+
+            // Generate HTML structure with native lazy loading
+            card.innerHTML = `
+                <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy">
+                <div class="temple-info">
+                    <h2>${temple.name}</h2>
+                    <p><strong>Location:</strong> ${temple.location}</p>
+                    <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+                    <p><strong>Total Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+                </div>
+            `;
+
+            // Append the finished card to the container
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+Key Technical Implementation Details
+• Native Lazy Loading: The loading="lazy" attribute is added directly to the <img> element. This tells modern browsers to delay loading the image until it is close to the user's viewport, improving page performance.
+• Dynamic Alt Text: The alt="${temple.name}" dynamically sets a descriptive alt attribute matching the exact name of the temple for accessibility.
+• Readable Numbers: The .toLocaleString() method formats the square footage number automatically by adding commas (e.g., 253,015), making it easier to read.
+If you want to modify this code further, let me know:
+• What framework you are using (like React, Vue, or Angular) if you aren't using plain JavaScript.
+• If you need to filter the array by specific criteria (like location or built date) before looping.
