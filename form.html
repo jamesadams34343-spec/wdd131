@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"WDD 131 - Dynamic Web Fundamentals - James Adams"</title>
+  <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - James Adams - introduction home page">
+  <meta name="author" content="James Adams">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/form-larg.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script defer src="scripts/form.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Product Review</h1>
+  </header>
+  <main>
+    <form action="review.html" method="get">
+      <div id="dropdown">
+        <label for="productselect">Product Name *</label>
+        <select name="selectproduct" id="product-select" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </div>
+      
+      <div>
+        <label>Overall Rating *</label>
+        <fieldset id="stars">
+          <input type="radio" id="fivestar" name="stars" value="5" aria-label="5 star rating" required><label for="fivestar"></label>
+          <input type="radio" id="fourstar" name="stars" value="4" aria-label="4 star rating" required><label for="fourstar"></label>
+          <input type="radio" id="threestar" name="stars" value="3" aria-label="3 star rating" required><label for="threestar"></label>
+          <input type="radio" id="twostar" name="stars" value="2" aria-label="2 star rating" required><label for="twostar"></label>
+          <input type="radio" id="onestar" name="stars" value="1" aria-label="1 star rating" required><label for="onestar"></label>
+        </fieldset>
+      </div>
+      <div>
+        <label for="dateitem">Date of Installation *</label>
+        <input type="date" name="itemdate" id="dateitem" required>
+      </div>
+      <div>
+        <label>Which features did you find useful in the product?</label>
+        <p>(Check all that apply)</p>
+        <fieldset>
+          <input type="checkbox" id="durability-feature" name="features" value="durability">
+          <label for="durability-feature">Durability</label><br>
+
+          <input type="checkbox" id="Ease-feature" name="features" value="Ease">
+          <label for="Ease-feature">Ease of Use</label><br>
+
+          <input type="checkbox" id="performance-feature" name="features" value="performance">
+          <label for="performance-feature">Performance</label><br>
+
+          <input type="checkbox" id="design-feature" name="features" value="design">
+          <label for="design-feature">Design</label><br>
+
+        </fieldset>
+      </div>
+      <div>
+        <label for="written-review">Written Review (Optional)</label>
+        <textarea name="review" id="written-review"></textarea>
+      </div>
+      <div>
+        <label for="username">Your Name (Optional)</label>
+        <input type="text" id="username" name="name">
+      </div>
+      <div>
+        <input type="submit" value="Post Review" id="submitbutton">
+      </div>
+
+    </form>
+  </main>
+  <footer>
+      <div>
+      <p>© <span id="current-year"></span><span id="spade"> ♠</span> James Adams <span id="spade2">♠</span> Utah</p>
+      <p>Last Modification: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
