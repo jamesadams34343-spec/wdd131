@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #B4EBE6;
+  --secondary-color: #FBF8EF;
+  --accent1-color: #222222;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: var(--accent1-color);
+  color: var(--secondary-color);
+}
+  h1 {
+    text-align: center;
+    margin: 2rem;
+    margin-top: 3rem;
+    padding: 3rem;
+  }
+
+  main {
+
+  }
+
+  main a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+  }
