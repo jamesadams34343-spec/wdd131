@@ -40,14 +40,25 @@ products.forEach(product => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const isFormSubmitted = document.referrer.includes('submit') || window.location.search.includes('submitted=true');
-  if (isFormSubmitted) {
-    let reviewCount = parseInt(localStorage.getItem('completedReviews')) || 0;
-    reviewCount += 1;
-    localStorage.setItem('completedReviews', reviewCount);
-    console.log(`Total reviews completed: ${reviewCount}`);
+  if (window.location.pathname.includes("review.html")) {
+    let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
+    reviewCount++;
+    localStorage.setItem("completedReviews", reviewCount)
   }
 });
+
+
+
+
+// faulty submission count attempt
+  //   const isFormSubmitted = document.referrer.includes('submit') || window.location.search.includes('submitted=true');
+//   if (isFormSubmitted) {
+//     let reviewCount = parseInt(localStorage.getItem('completedReviews')) || 0;
+//     reviewCount += 1;
+//     localStorage.setItem('completedReviews', reviewCount);
+//     console.log(`Total reviews completed: ${reviewCount}`);
+//   }
+// });
 
 
 
