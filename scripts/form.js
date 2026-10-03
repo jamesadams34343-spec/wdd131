@@ -39,17 +39,16 @@ products.forEach(product => {
   productSelect.appendChild(option);
 });
 
-<form action="review.html?submitted=true" method="get"></form>
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  const onReviewPage = window.location.pathname.includes("review.html");
-  const submittedFlag = window.location.search.includes("submitted=true");
+  const isFormSubmission = document.referrer.includes('submit') || window.location.search.includes('success');
 
-  if (onReviewPage) {
-    let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
-    localStorage.setItem("completedReviews", reviewCount + 1);
-  }
-});
+  if (isFormSubmission) {
+    let reviewCount = parseInt(localStorage.getItem('completedReviews')) || 0;
+    reviewCount++;
+    localStorage.setItem('completedReviews', reviewCount);
+    console.log(`Review submitted! Total reviews completed: ${reviewCount}`);
 
 //   if (onReviewPage && submittedFlag) {
 //     let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
@@ -116,3 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //         console.log(`Review submitted! Total reviews completed: ${reviewCount}`);
 //     }
 // });
+
+
