@@ -39,20 +39,30 @@ products.forEach(product => {
   productSelect.appendChild(option);
 });
 
-//<form action="review.html?submitted=true" method="get"></form>
+/* <form action="review.html?submitted=true" method="get"></form> */
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const onReviewPage = window.location.pathname.includes("review.html");
+//   const submittedFlag = window.location.search.includes("submitted=true");
+
+//   if (onReviewPage && submittedFlag) {
+//     let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
+//     reviewCount++;
+//     localStorage.setItem("completedReviews", reviewCount)
+//   }
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const onReviewPage = window.location.pathname.includes("review.html");
-  const submittedFlag = window.location.search.includes("submitted=true");
+  const url = new URL(window.location.href);
+
+  const onReviewPage = url.pathname.endsWith("review.html");
+  const submittedFlag = url.searchParams.get("submitted") === "true";
 
   if (onReviewPage && submittedFlag) {
-    let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
-    reviewCount++;
-    localStorage.setItem("completedReviews", reviewCount)
+    const reviewCount = parseInt(localStorage.getItem("completedReviews"), 10) || 0;
+    localStorage.setItem("completedReviews", reviewCount + 1);
   }
 });
-
-
 
 
 // faulty submission count attempt
