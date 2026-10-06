@@ -52,7 +52,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Stars
 
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll("#stars label");
+  const inputs = document.querySelectorAll("stars input");
+
+  function highlightStars(count) {
+    stars.forEach((star,index) => {
+      star.style.color = index < count ? "gold" : "grey";
+    });
+  }
+
+  // hover
+  stars.forEach((star, index) => {
+    star.addEventListener("mouseover", () => highlightStars(index + 1));
+    star.addEventListener("mouseout", () => {
+      const checked = document.querySelector("#stars input:checked");
+      highlightStars(checked ? checked.value : 0);
+    });
+  });
+
+// click
+  inputs.forEach((input, index) => {
+    input.addEventListener("change", () => highlightStars(index + 1));
+  });
+});
+
+
+
+
+// star effect
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const stars = document.querySelectorAll("#stars label");
+//   const inputs = document.querySelectorAll("#stars input");
+
+//   function highlightStars(count) {
+//     stars.forEach((star, index) => {
+//       star.style.color = index < count ? "gold" : "grey";
+//     });
+//   }
+
+//   // Hover effect
+//   stars.forEach((star, index) => {
+//     star.addEventListener("mouseover", () => highlightStars(index + 1));
+//     star.addEventListener("mouseout", () => {
+//       const checked = document.querySelector("#stars input:checked");
+//       highlightStars(checked ? checked.value : 0);
+//     });
+//   });
+
+//   // Click effect
+//   inputs.forEach((input, index) => {
+//     input.addEventListener("change", () => highlightStars(index + 1));
+//   });
+// });
 
 //   if (onReviewPage && submittedFlag) {
 //     let reviewCount = Number(localStorage.getItem("completedReviews")) || 0;
