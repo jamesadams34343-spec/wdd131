@@ -1,12 +1,18 @@
-@media screen and (max-width: 500px) {
-  header {
-    position: relative;
- 
-  
+
+
+
+@media screen and (min-width: 500px) {
+
+  h1 {    
+    width: 50%;    
   }
-header h1 {
-  width: 100%;
+  
+    form {
+      width: 50%;      
+    }
+
+  footer {
+    width: 50%;
+  }
 }
 
-
-}

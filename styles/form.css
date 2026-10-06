@@ -19,7 +19,7 @@ body {
     background-color: var(--primary-color);
     color: var(--accent1-color);
     text-align: center;
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     margin: .5rem;
   }
@@ -30,7 +30,7 @@ body {
     form {
       background-color: var(--secondary-color);
       color: var(--accent1-color);
-      width: 50%;
+      width: 100%;
       margin: .5rem;
       padding: .5rem;
     }
@@ -111,7 +111,7 @@ body {
     background-color: var(--primary-color);
     color: var(--accent1-color);
     text-align: center;
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     margin: .5rem;
   }
