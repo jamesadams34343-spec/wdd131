@@ -1,0 +1,12 @@
+@media screen and (min-width: 500px) {
+  header {
+    position: relative;
+ 
+  
+  }
+header h1 {
+  width: 100%;
+}
+
+
+}
