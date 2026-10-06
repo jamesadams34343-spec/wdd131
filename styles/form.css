@@ -44,6 +44,33 @@ body {
 
         #stars {
           width: 100%;
+          display: inline-block;
+        }
+
+        .star-rating {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: center;
+        }
+
+        .star-rating input[type="radio"] {
+          display: none !important;
+        }
+        
+        .star-rating label {
+          font-size: 2rem;
+          color: grey;
+          cursor: pointer;
+          transition: color 0.2s;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+          color: gold;
+        }
+
+        .star-rating input:checked ~ label {
+          color: gold;
         }
 
         #dateitem {
