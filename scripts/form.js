@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const stars = document.querySelectorAll("#stars label");
-  const inputs = document.querySelectorAll("stars input");
+  const inputs = document.querySelectorAll("#stars input");
 
   function highlightStars(count) {
     stars.forEach((star,index) => {
