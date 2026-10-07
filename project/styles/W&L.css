@@ -1,0 +1,16 @@
+ :root {
+ --bg-primary: rgb(0, 8, 0);       /* green black*/
+  --text-primary: #ebe6f7;     /* almost white */
+  --color-purple: #b516ff;     /* not sure if I love the purple */
+  --color-green: #7bff00;      /* little greener than recomended */
+  --surface-card: #211833;     /* increased but puple on a another near black*/
+
+  /* Cyber Gradient  don't understand what this does leaving it for now for curiosity sake*/
+  --gradient-accent: linear-gradient(135deg, var(--color-purple), var(--color-green));
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
