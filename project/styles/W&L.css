@@ -1,9 +1,9 @@
  :root {
- --bg-primary: rgb(0, 8, 0);       /* green black*/
-  --text-primary: #ebe6f7;     /* almost white */
-  --color-purple: #b516ff;     /* not sure if I love the purple */
-  --color-green: #7bff00;      /* little greener than recomended */
-  --surface-card: #211833;     /* increased but puple on a another near black*/
+ --bg-primary: rgb(0, 12, 0);       /* green black background maybe testing needed*/
+  --text-primary: #f7f6e6;     /* almost white text color */
+  --color-grey: slategrey;     /* accent not likly to be used in direct conjunction with text */
+  --color-blue: royalblue;      /* secondary for backgrounds as accent and eye catcher*/
+ 
 
   /* Cyber Gradient  don't understand what this does leaving it for now for curiosity sake*/
   --gradient-accent: linear-gradient(135deg, var(--color-purple), var(--color-green));
@@ -14,3 +14,29 @@ body{
   font-weight: 400;
 }
 
+header{
+  background-color: var(--color-blue);
+  color: var(--text-primary);
+  padding: 1rem;
+  text-align: center;
+}
+
+  .logo {
+    float: left;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    stroke: var(--color-blue)
+  }
+
+  section {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 1rem;
+  }
+  
+  footer {
+    background-color: var(--color-blue);
+    color: var(--text-primary);
+    padding: 1rem;
+    text-align: center;
+  }
