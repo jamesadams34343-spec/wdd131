@@ -119,8 +119,8 @@ main {
       gap: 1rem;
       padding: 1rem;
       justify-content: center;
-      /* flex-wrap: wrap; */
     }
+
     #trending h2 {
       width: 100%;
       text-align: left;
@@ -150,10 +150,16 @@ main {
 
     #misc {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       padding: 1rem;
       justify-content: center;
-      /* flex-wrap: wrap; */
+    }
+
+    #misc h2 {
+      width: 100%;
+      text-align: left;
+      margin: 0 0 1rem 0;
     }
 
     #misc a {
