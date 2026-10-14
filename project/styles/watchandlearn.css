@@ -1,0 +1,213 @@
+ :root {
+ --bg-primary: rgb(0, 12, 0);       /* green black background maybe testing needed*/
+  --text-primary: #f7f6e6;     /* almost white text color */
+  --color-grey: slategrey;     /* accent not likly to be used in direct conjunction with text */
+  --color-blue: rgb(77, 117, 238);      /* secondary for backgrounds as accent and eye catcher*/
+ 
+
+  /* Cyber Gradient  don't understand what this does leaving it for now for curiosity sake*/
+  --gradient-accent: linear-gradient(135deg, var(--color-purple), var(--color-green));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* Header section */
+
+header{
+  display: flex;
+  width: 100%;
+  background-color: var(--color-blue);
+  color: var(--text-primary);
+  padding: 1rem;
+}
+
+
+  .both-sides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .first-half {
+
+  }
+
+    h1 {
+      
+    }
+
+    .logo {
+      display: flex;
+      float: left;
+      padding: 1rem;
+      /* background-color: var(--bg-primary); */
+      stroke: var(--bg-primary);
+      stroke-width: .5px;
+      box-sizing: initial;
+    }
+
+
+    .middle {
+      display: flex;
+      
+    }
+  
+  .second-half {
+    margin-left: auto;
+    width: auto;
+    height: 2rem;
+    align-self: center;
+    border: 1rem;
+    border-radius: 1rem;
+    gap: 3rem;
+    background-color: var(--color-grey);
+    text-decoration: none;
+    padding: 1rem 1rem;
+
+
+  }  
+
+    .second-half li{
+      list-style: none;
+      
+    }
+
+    .second-half li a {
+        text-decoration: none;
+      }
+
+
+/* Main section */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--text-primary);
+
+}
+
+  main select {
+    padding: 1rem;
+    margin: 1rem;
+
+  }
+    section {
+    grid-column: 1fr;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 1rem;
+
+
+/*Trending Section */    
+  }
+
+    #trending {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      justify-content: center;
+      /* flex-wrap: wrap; */
+    }
+    #trending h2 {
+      width: 100%;
+      text-align: left;
+      margin: 0 0 1rem 0;
+    }
+
+
+    #trending a{
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+
+    #trending a:hover{
+      transform: scale(1.05); /* creates a pop apparently I love the idea? */
+    }
+
+    #trending img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: .5rem;
+      box-shadow:  0 4px 8px rgba(0,0,0,0.1);
+    }
+
+/* Miscellaneous Section*/
+
+    #misc {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      justify-content: center;
+      /* flex-wrap: wrap; */
+    }
+
+    #misc a {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    #misc a:hover {
+      transform: scale(1.05); /* creates a pop apparently I love the idea? */
+    }
+
+    #misc img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: .5rem;
+      box-shadow:  0 4px 8px rgba(0,0,0,0.1);
+    }
+
+
+/*Articles Section*/
+
+    #articles {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      justify-content: center;
+      /* flex-wrap: wrap; */
+    }
+
+    #articles a {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    #articles a:hover {
+      transform: scale(1.05); /* creates a pop apparently I love the idea? */
+    }
+
+    #articles img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: .5rem;
+      box-shadow:  0 4px 8px rgba(0,0,0,0.1);
+    }
+
+
+
+/* Footer Section */
+
+footer {
+    background-color: var(--color-blue);
+    color: var(--text-primary);
+    padding: 1rem;
+    text-align: center;
+  }
