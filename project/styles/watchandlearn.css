@@ -1,9 +1,14 @@
  :root {
- --bg-primary: rgb(0, 12, 0);       /* green black background maybe testing needed*/
-  --text-primary: #f7f6e6;     /* almost white text color */
-  --color-grey: slategrey;     /* accent not likly to be used in direct conjunction with text */
-  --color-blue: rgb(77, 117, 238);      /* secondary for backgrounds as accent and eye catcher*/
+  --bg-primary: #FDFBF7;       /* green black background maybe testing needed*/
+  --text-primary: #2C221E;     /* almost white text color */
+  --accent-one: skyblue;     /* accent not likly to be used in direct conjunction with text */
+  --accent-two: #788A6D;      /* secondary for backgrounds as accent and eye catcher*/
  
+
+
+
+
+
 
   /* Cyber Gradient  don't understand what this does leaving it for now for curiosity sake*/
   --gradient-accent: linear-gradient(135deg, var(--color-purple), var(--color-green));
@@ -26,7 +31,7 @@ body{
 header{
   display: flex;
   width: 100%;
-  background-color: var(--color-blue);
+  background-color: var(--accent-two);
   color: var(--text-primary);
   padding: 1rem;
 }
@@ -72,7 +77,7 @@ header{
     border: 1rem;
     border-radius: 1rem;
     gap: 3rem;
-    background-color: var(--color-grey);
+    background-color: var(--accent-one);
     text-decoration: none;
     padding: 1rem 1rem;
 
@@ -250,7 +255,9 @@ main {
 
 /*review page*/
 
-
+      #review-form {
+        color: var(--bg-primary);
+      }
           #stars {
           width: 100%;
           display: inline-block;
@@ -334,7 +341,7 @@ main {
 /* Footer Section */
 
 footer {
-    background-color: var(--color-blue);
+    background-color: var(--accent-two);
     color: var(--text-primary);
     padding: 1rem;
     text-align: center;
