@@ -248,6 +248,88 @@ main {
     }
 
 
+/*review page*/
+
+
+          #stars {
+          width: 100%;
+          display: inline-block;
+        }
+
+        .star-rating {
+          display: flex;
+          justify-content: center;
+        }
+
+        .star-rating input[type="radio"] {
+          display: none !important;
+        }
+        
+        .star-rating label {
+          font-size: 2rem;
+          color: grey;
+          cursor: pointer;
+          transition: color 0.2s;
+        }
+
+
+                form div fieldset {
+          border: none;
+
+        }
+          fieldset input {
+            margin: 5px;
+          }
+        #written-review {
+          width: 100%;
+          height: 5rem;
+        }
+        #username {
+          width: 100%;
+          height: 2rem;
+        }
+        #submitbutton {
+          width: 100%;
+          height: 3rem;
+          font-size: larger;
+        }
+
+/* about us page */
+
+
+#about-collage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  inset: 0;
+}
+
+#about-collage img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  position: absolute;
+  transition: transform .3s;
+}
+
+#about-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 80%);
+  z-index: 100;
+  width: min(800px, 80%);
+  margin: 10rem auto;
+  background-color: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#about-content h2{
+  margin-bottom: 2rem;
+}
 
 /* Footer Section */
 

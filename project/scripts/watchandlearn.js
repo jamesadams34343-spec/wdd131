@@ -41,190 +41,191 @@ const displaygroup = 8;
 
 
 //this retreives the random videos from for the misc section
+if (document.querySelector('#misc')) {
+  function getrandomvids(array, count) {
+    const shuffled = [...array].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
 
-function getrandomvids(array, count) {
-  const shuffled = [...array].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
+
+  const miscSection = document.querySelector('#misc'); // Changed variable name and selector target
+  const selectedItems = getrandomvids(trendingvideos, displaygroup);
+
+  selectedItems.forEach(item => {
+    const anchor = document.createElement('a');
+    anchor.href = item.url;
+    anchor.target = '_blank'; /*new tab*/
+
+    // const createid = item.image.split('.')[0];//[0]; // creates the link ids for the counter so I have something to track for the trending section
+    // anchor.id = createid;
+    
+    const createid = item.id;
+
+    const img = document.createElement('img');
+    img.src = `images/${item.image}`;
+    img.alt = 'Miscellaneous item'; // Updated alt text to match the new context
+    img.loading = 'lazy';
+
+    anchor.addEventListener('click', () => {
+      clicktracking(item.id);
+    });
+
+      // const lskey = `click_${createid}`;
+      // let currentClicks = localStorage.getItem(lskey) ? parseInt(localStorage.getItem(lskey)) : 0;
+      
+      // currentClicks++;
+
+      // localStorage.setItem(lskey, currentClicks);
+
+      // gettrendingvids();
+    
 
 
-const miscSection = document.querySelector('#misc'); // Changed variable name and selector target
-const selectedItems = getrandomvids(trendingvideos, displaygroup);
 
-selectedItems.forEach(item => {
-  const anchor = document.createElement('a');
-  anchor.href = item.url;
-  anchor.target = '_blank'; /*new tab*/
-
-  // const createid = item.image.split('.')[0];//[0]; // creates the link ids for the counter so I have something to track for the trending section
-  // anchor.id = createid;
-  
-  const createid = item.id;
-
-  const img = document.createElement('img');
-  img.src = `images/${item.image}`;
-  img.alt = 'Miscellaneous item'; // Updated alt text to match the new context
-  img.loading = 'lazy';
-
-  anchor.addEventListener('click', () => {
-    clicktracking(item.id);
+    anchor.appendChild(img);
+    miscSection.appendChild(anchor); // Appends to the new section variable
   });
 
-    // const lskey = `click_${createid}`;
-    // let currentClicks = localStorage.getItem(lskey) ? parseInt(localStorage.getItem(lskey)) : 0;
-    
-    // currentClicks++;
-
-    // localStorage.setItem(lskey, currentClicks);
-
-    // gettrendingvids();
-  
-
-
-
-  anchor.appendChild(img);
-  miscSection.appendChild(anchor); // Appends to the new section variable
-});
-
-
+}
 
 
 
 
 
 //This pulls the local storage information for the trending function
+if (document.querySelector('#trending')) {
+  function gettrendingvids() {
+    const trendingsection = document.querySelector('#trending');
+    if(!trendingsection) return;
 
-function gettrendingvids() {
-  const trendingsection = document.querySelector('#trending');
-  if(!trendingsection) return;
+    let lscount = [];
 
-  let lscount = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
 
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
+      if (key.startsWith('click_')) {
+        const createid = key.replace('click_', '');
+        const clicks = parseInt(localStorage.getItem(key)) || 0;
 
-    if (key.startsWith('click_')) {
-      const createid = key.replace('click_', '');
-      const clicks = parseInt(localStorage.getItem(key)) || 0;
+        // const originalItem = trendingvideos.find(v => v.image.split('.')[0] === createid);
 
-      // const originalItem = trendingvideos.find(v => v.image.split('.')[0] === createid);
+        const originalItem = trendingvideos.find(v => v.id == createid);
+        
 
-      const originalItem = trendingvideos.find(v => v.id == createid);
-      
+        //if(originalItem && clicks > 0) { <- might replace below it replaced -> if(originalItem) {
 
-      //if(originalItem && clicks > 0) { <- might replace below it replaced -> if(originalItem) {
+        if(originalItem && clicks > 0) {
+          lscount.push({ ...originalItem, clicks: clicks });
 
-      if(originalItem && clicks > 0) {
-        lscount.push({ ...originalItem, clicks: clicks });
-
+        }
       }
     }
-  }
 
-  // if (lscount.length === 0) {
+    // if (lscount.length === 0) {
 
-  //   lscount = trendingvideos.slice(0, displaygroup).map(item => ({ ...item, clicks: 0 }));
-  // } else {
-  //   lscount.sort((a, b) => b.clicks - a.clicks);
-  // }
+    //   lscount = trendingvideos.slice(0, displaygroup).map(item => ({ ...item, clicks: 0 }));
+    // } else {
+    //   lscount.sort((a, b) => b.clicks - a.clicks);
+    // }
 
 
-  if(lscount.length > 0) {
-    lscount.sort((a, b) => b.clicks - a.clicks);
+    if(lscount.length > 0) {
+      lscount.sort((a, b) => b.clicks - a.clicks);
+      
+      // const currentids = lscount.map(item => item.image.split('.')[0]);
+      // const extras = trendingvideos.filter(item => !currentids.includes(item.image.split('.')[0]));
+
+      const currentids = lscount.map(item => item.id);
+
+      const extras = trendingvideos.filter(item => !currentids.includes(item.id));
+
+
+      lscount = [...lscount, ...extras];
+    }
+    else {
+      lscount = [...trendingvideos];
+    }
+
+
+
+    const highestamount = lscount.slice(0, displaygroup);
+
+    trendingsection.innerHTML = '<h2>Trending Videos</h2>';
     
-    // const currentids = lscount.map(item => item.image.split('.')[0]);
-    // const extras = trendingvideos.filter(item => !currentids.includes(item.image.split('.')[0]));
+    highestamount.forEach(item => {
+      const trendlink = document.createElement('a');
+      trendlink.href = item.url;
+      trendlink.target = '_blank';
+      trendlink.className = 'trending-clicks'; //<- if this doesn't work try 'Trending';
 
-    const currentids = lscount.map(item => item.id);
-
-    const extras = trendingvideos.filter(item => !currentids.includes(item.id));
-
-
-    lscount = [...lscount, ...extras];
-  }
-  else {
-    lscount = [...trendingvideos];
-  }
-
-
-
-  const highestamount = lscount.slice(0, displaygroup);
-
-  trendingsection.innerHTML = '<h2>Trending Videos</h2>';
-  
-  highestamount.forEach(item => {
-    const trendlink = document.createElement('a');
-    trendlink.href = item.url;
-    trendlink.target = '_blank';
-    trendlink.className = 'trending-clicks'; //<- if this doesn't work try 'Trending';
-
-    trendlink.addEventListener('click', () => {
-      clicktracking(item.id);
-     });
-
-    const trendimg = document.createElement('img');
-    trendimg.src = `images/${item.image}`;
-    trendimg.alt = 'Trending video thumbnail';
-    trendimg.loading = 'lazy';
-
-    trendlink.appendChild(trendimg);
-    trendingsection.appendChild(trendlink);
-  });
-
-
-
-}
-gettrendingvids();
-
-
-
-
-
-function getselectedvids(category) {
-  const selectedsection = document.querySelector('#selection');
-  
-  
-  if(!selectedsection) return;
-  
-    selectedsection.innerHTML='';
-
-    const heading = document.createElement('h2');
-    heading.textContent = `${category} Videos`;
-
-    selectedsection.appendChild(heading);
-
-    const matches = trendingvideos.filter(video => video.category === category).slice(0, displaygroup);
-
-    matches.forEach(item => {
-      const link = document.createElement('a');
-
-      link.href = item.url;
-      link.target = '_blank';
-
-      link.addEventListener('click', () => {
+      trendlink.addEventListener('click', () => {
         clicktracking(item.id);
-       });
+      });
 
-      const img = document.createElement('img');
-        img.src = `images/${item.image}`;
-        img.alt = item.category;
-        img.loading = 'lazy';
+      const trendimg = document.createElement('img');
+      trendimg.src = `images/${item.image}`;
+      trendimg.alt = 'Trending video thumbnail';
+      trendimg.loading = 'lazy';
 
-        link.appendChild(img);
-        selectedsection.appendChild(link);
+      trendlink.appendChild(trendimg);
+      trendingsection.appendChild(trendlink);
     });
 
 
 
+  }
+  gettrendingvids();
 }
 
-  const videoselection = document.querySelector('#videos');
 
-  videoselection.addEventListener('change' , (event) => {
-  getselectedvids(event.target.value);
 
-});
+if (document.querySelector('#selection')) {
+  function getselectedvids(category) {
+    const selectedsection = document.querySelector('#selection');
+    
+    
+    if(!selectedsection) return;
+    
+      selectedsection.innerHTML='';
 
+      const heading = document.createElement('h2');
+      heading.textContent = `${category} Videos`;
+
+      selectedsection.appendChild(heading);
+
+      const matches = trendingvideos.filter(video => video.category === category).slice(0, displaygroup);
+
+      matches.forEach(item => {
+        const link = document.createElement('a');
+
+        link.href = item.url;
+        link.target = '_blank';
+
+        link.addEventListener('click', () => {
+          clicktracking(item.id);
+        });
+
+        const img = document.createElement('img');
+          img.src = `images/${item.image}`;
+          img.alt = item.category;
+          img.loading = 'lazy';
+
+          link.appendChild(img);
+          selectedsection.appendChild(link);
+      });
+
+
+
+  }
+
+    const videoselection = document.querySelector('#videos');
+
+    videoselection.addEventListener('change' , (event) => {
+    getselectedvids(event.target.value);
+
+  });
+
+}
 
 function clicktracking (uniqueid) {
   const lskey = `click_${uniqueid}`;
@@ -240,18 +241,69 @@ localStorage.setItem(lskey, currentClicks);
 
 
 
+if(document.querySelector('#stars')) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const stars = document.querySelectorAll("#stars label");
+    const inputs = document.querySelectorAll("#stars input");
+
+    function highlightStars(count) {
+      stars.forEach((star,index) => {
+        star.style.color = index < count ? "gold" : "grey";
+      });
+    }
+
+    // hover
+    stars.forEach((star, index) => {
+      star.addEventListener("mouseover", () => highlightStars(index + 1));
+      star.addEventListener("mouseout", () => {
+        const checked = document.querySelector("#stars input:checked");
+        highlightStars(checked ? Number(checked.value) : 0);
+      });
+    });
+
+  // click
+    inputs.forEach((input, index) => {
+      input.addEventListener("change", () => highlightStars(index + 1));
+    });
+  });
+}
+
+
+if (document.querySelector('#review-form')) {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", () => {
+    alert("Thank you for the review!");
+  })
+
+  const reviewForm = document.querySelector('#review-form');
+
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', () => {
+      let reviewCount = parseInt(localStorage.getItem('reviewCount')) || 0;
+
+      reviewCount++;
+    localStorage.setItem('reviewCount', reviewCount);
+
+    alert("Thank you for the review!");
+    });
+  }
+}
 
 
 
+if (document.querySelector('#about-collage')) {
+  const collage = document.querySelector('#about-collage');
+  
+  if (collage) {
+    trendingvideos.forEach(item => {
+      const img = document.createElement('img');
+      img.src = `images/${item.image}`;
+      img.style.left = `${Math.random() * 80}%`;
+      img.style.top = `${Math.random() * 80}%`
+    img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+    collage.appendChild(img);
+    });
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+}

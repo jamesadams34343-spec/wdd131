@@ -35,29 +35,60 @@
     </div>
   </header>
   <main>
-    <div>
-      <search>
-        <form action="">
-          <input
-          type="search"
-          id="search-site"
-          name="Q?"
-          placeholder="What would you like to know?"
-          aria-label="Search the site content"
-          >
-          <button type="submit">Ask</button>
-        </form>
-      </search>
-      <section id="trending">
-        <h2>Trending</h2>
-      </section>
-      <section id="misc">
-        <h2>Miscellaneous</h2>
-      </section>
-      <section id="articles">
-        <h2>Articles</h2>
-      </section>
-    </div>
+
+    <select name="videos" id="videos">
+      <option value="" disabled selected>Select an area of interest</option>
+      <option value="Woodworking">Wood Working</option>
+      <option value="Coding">Coding</option>
+      <option value="Quilting">Quilting</option>
+    </select>
+
+    <section id="selection"></section>
+
+       <form action="index.html" method="get" id="review -form">
+     
+      
+      <div>
+        <label>Please give us a rating *</label>
+        <fieldset id="stars" class="star-rating">
+          <input type="radio" id="onestar" name="stars" value="1" aria-label="1 star rating" required><label for="onestar">★</label>
+          <input type="radio" id="twostar" name="stars" value="2" aria-label="2 star rating" required><label for="twostar">★</label>
+          <input type="radio" id="threestar" name="stars" value="3" aria-label="3 star rating" required><label for="threestar">★</label>
+          <input type="radio" id="fourstar" name="stars" value="4" aria-label="4 star rating" required><label for="fourstar">★</label>
+          <input type="radio" id="fivestar" name="stars" value="5" aria-label="5 star rating" required><label for="fivestar">★</label>
+        </fieldset>
+      </div>
+
+      <div>
+        <label>Which features did you find helpful?</label>
+        <p>(Check all that apply)</p>
+        <fieldset>
+          <input type="checkbox" id="Ease-feature" name="features" value="Ease">
+          <label for="Ease-feature">Ease of Use</label><br>
+
+          <input type="checkbox" id="design-feature" name="features" value="design">
+          <label for="design-feature">Design</label><br>
+
+          <input type="checkbox" id="performance-feature" name="features" value="performance">
+          <label for="performance-feature">Performance</label><br>
+
+
+
+        </fieldset>
+      </div>
+      <div>
+        <label for="written-review">Please describe areas that may need improvement(Optional)</label>
+        <textarea name="review" id="written-review"></textarea>
+      </div>
+      <div>
+        <label for="username">Your Name (Optional)</label>
+        <input type="text" id="username" name="name">
+      </div>
+      <div>
+          <input type="submit" value="Post Review" id="submitbutton">       
+      </div>
+
+    </form>
   </main>
   <footer>
     <p>© <span id="current-year"></span><span id="spade"> ♠</span> James Adams <span id="spade2">♠</span> Utah</p>
