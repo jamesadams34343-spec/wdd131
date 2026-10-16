@@ -108,10 +108,50 @@ main {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     padding: 1rem;
+    }
+
+
+      #selection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: center;
+
+        /* display: none;
+        margin-top: 20px; */
+      }
+
+
+
+          #selection h2 {
+            width: 100%;
+            text-align: left;
+            margin: 0 0 1rem 0;
+          }
+
+
+          #selection a{
+            display: inline-block;
+            transition: transform 0.2s;
+          }
+
+
+          #selection a:hover{
+            transform: scale(1.05); /* creates a pop apparently I love the idea? */
+          }
+
+          #selection img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: .5rem;
+            box-shadow:  0 4px 8px rgba(0,0,0,0.1);
+          }
 
 
 /*Trending Section */    
-  }
+  
 
     #trending {
       display: flex;
