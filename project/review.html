@@ -29,10 +29,10 @@
       <!-- <img src="images/video-frame-play-vertical.svg" alt="Watch & Learn" width="50"> -->
       <h1>Watch & Learn</h1>
     </div>
-    <div class="second-half both-sides">
+    <ul class="second-half both-sides">
       <li><a href="https://jamesadams34343-spec.github.io/wdd131/project/index.html">Home</a></li>
       <li><a href="https://jamesadams34343-spec.github.io/wdd131/project/aboutus.html">About us</a></li>
-    </div>
+    </ul>
   </header>
   <main>
 
@@ -43,13 +43,13 @@
       <option value="Quilting">Quilting</option>
     </select>
 
-    <section id="selection"></section>
+    <section id="selection" aria-label="select area of interest"></section>
 
        <form action="index.html" method="get" id="review-form">
      
       
       <div>
-        <label>Please give us a rating *</label>
+        <p>Please give us a rating *</p>
         <fieldset id="stars" class="star-rating">
           <input type="radio" id="onestar" name="stars" value="1" aria-label="1 star rating" required><label for="onestar">★</label>
           <input type="radio" id="twostar" name="stars" value="2" aria-label="2 star rating" required><label for="twostar">★</label>
@@ -60,7 +60,7 @@
       </div>
 
       <div>
-        <label>Which features did you find helpful?</label>
+        <p>Which features did you find helpful?</p>
         <p>(Check all that apply)</p>
         <fieldset>
           <input type="checkbox" id="Ease-feature" name="features" value="Ease">

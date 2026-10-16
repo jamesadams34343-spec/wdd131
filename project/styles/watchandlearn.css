@@ -1,8 +1,8 @@
  :root {
   --bg-primary: #FDFBF7;       /* green black background maybe testing needed*/
-  --text-primary: #2C221E;     /* almost white text color */
+  --text-primary: black;     /* almost white text color */
   --accent-one: skyblue;     /* accent not likly to be used in direct conjunction with text */
-  --accent-two: #788A6D;      /* secondary for backgrounds as accent and eye catcher*/
+  --accent-two: #cbcfc8;      /* secondary for backgrounds as accent and eye catcher*/
  
 
 
@@ -337,6 +337,16 @@ main {
 #about-content h2{
   margin-bottom: 2rem;
 }
+
+/*Reference page*/
+
+#ref p {
+  color: white;
+  background-color: black;
+}
+
+
+
 
 /* Footer Section */
 
