@@ -39,6 +39,7 @@ let trendingvideos = [
 
 const displaygroup = 8;
 
+// homepage
 
 //this retreives the random videos from for the misc section
 if (document.querySelector('#misc')) {
@@ -89,7 +90,7 @@ if (document.querySelector('#misc')) {
 }
 
 
-
+// homepage
 
 
 //This pulls the local storage information for the trending function
@@ -128,6 +129,7 @@ if (document.querySelector('#trending')) {
     //   lscount.sort((a, b) => b.clicks - a.clicks);
     // }
 
+    
 
     if(lscount.length > 0) {
       lscount.sort((a, b) => b.clicks - a.clicks);
@@ -177,7 +179,7 @@ if (document.querySelector('#trending')) {
   gettrendingvids();
 }
 
-
+// homepage
 
 if (document.querySelector('#selection')) {
   function getselectedvids(category) {
@@ -227,6 +229,8 @@ if (document.querySelector('#selection')) {
 
 }
 
+// homepage
+
 function clicktracking (uniqueid) {
   const lskey = `click_${uniqueid}`;
 
@@ -239,7 +243,7 @@ localStorage.setItem(lskey, currentClicks);
 
 }
 
-
+//review page
 
 if(document.querySelector('#stars')) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -268,6 +272,7 @@ if(document.querySelector('#stars')) {
   });
 }
 
+//review page
 
 if (document.querySelector('#review-form')) {
   const form = document.querySelector("form");
@@ -290,7 +295,7 @@ if (document.querySelector('#review-form')) {
   }
 }
 
-
+//About us page
 
 if (document.querySelector('#about-collage')) {
   const collage = document.querySelector('#about-collage');
@@ -306,4 +311,136 @@ if (document.querySelector('#about-collage')) {
     });
   }
 
+}
+
+if (document.querySelector('#ref')) {
+  function refpage(videoslist) {
+    return videoslist.map(video => {
+      const {channel, uploadDate, title, url, username } = video;
+      const authorDisplay = username ? `${channel} [${username}]` : channel;
+      return `${authorDisplay}. (${uploadDate}). *${title}* [Video]. YouTube. ${url}`;
+    });
+  }
+  const tubeVideos = [
+    {
+      channel: "Woodworking Studio",
+      username: "@WoodworkingStudio",
+      uploadDate: "Jan 21, 2025",
+      title: "Top 6 Japanese Woodworking projects for Beginners",
+      url: trendingvideos[0].url
+    },
+    {
+      channel: "YASUHIRO TV",
+      username: "@YASUHIROTV",
+      uploadDate: "May 11, 2025",
+      title: "40 Simple Circular Saw Hacks | Japanese Woodworking",
+      url: trendingvideos[1].url
+    },
+    {
+      channel: "Woodworking Studio",
+      username: "@WoodworkingStudio",
+      uploadDate: "Jul 7, 2026",
+      title: "Top 6 Japanese Woodworking Skills for Beginners",
+      url: trendingvideos[2].url
+    },
+    {
+      channel: "YASUHIRO TV",
+      username: "@YASUHIROTV",
+      uploadDate: "Sep 27, 2025",
+      title: "TOP 60 Router Hacks | Japanese Woodworking",
+      url: trendingvideos[3].url
+    },
+    {
+      channel: "B&D Handmade-Wood",
+      username: "@BD-DIY-HOMEMADE",
+      uploadDate: "Mar 13, 2025",
+      title: "5 Jigs and Simple Trim Router Hacks | DIY Woodworking ..!",
+      url: trendingvideos[4].url
+    },
+    {
+      channel: "Bro Code",
+      username: "@BroCodez",
+      uploadDate: "Aug 20, 2024",
+      title: "Python Full Course for free",
+      url: trendingvideos[5].url
+    },
+    {
+      channel: "Programming with Mosh",
+      username: "@programmingwithmosh",
+      uploadDate: "Aug 10, 2022",
+      title: "C++ Tutorial for Beginners - Learn C++ in 1 Hour",
+      url: trendingvideos[6].url
+    },
+    {
+      channel: "freeCodeCamp.org",
+      username: "@freecodecamp",
+      uploadDate: "Apr 21, 2020",
+      title: "Introduction to Programming and Computer Science - Full Course",
+      url: trendingvideos[7].url
+    },
+    {
+      channel: "Bro Code",
+      username: "@BroCodez",
+      uploadDate: "Jan 1, 2024",
+      title: "JavaScript Full Course for free",
+      url: trendingvideos[8].url
+    },
+    {
+      channel: "SuperSimpleDev",
+      username: "@SuperSimpleDev",
+      uploadDate: "May 9, 2024",
+      title: "JavaScript Tutorial Full Course - Beginner to Pro",
+      url: trendingvideos[9].url
+    },
+    {
+      channel: "Fat Quarter Shop",
+      username: "@FatQuarterShopTX",
+      uploadDate: "Oct 13, 2026",
+      title: "Jelly Roll Rigatoni Quilt Tutorial 🍝 Easy Jelly Roll Quilt + FREE Pattern | Fat Quarter Shop",
+      url: trendingvideos[10].url
+    },
+    {
+      channel: "Missouri Star",
+      username: "@MissouriQuiltCo",
+      uploadDate: "Aug 3, 2023",
+      title: "How to Make a Beginner's Star Quilt - Free Quilting Tutorial",
+      url: trendingvideos[11].url
+    },
+    {
+      channel: "Sew Be It Quilts",
+      username: "@sewbeitquilts",
+      uploadDate: "Jul 6, 2024",
+      title: "5 Must Know Quilt Blocks for Beginners! | Quilting Tutorial",
+      url: trendingvideos[12].url
+    },
+    {
+      channel: "Chelsea | She Sews Seams",
+      username: "@shesewsseams",
+      uploadDate: "Oct 16, 2025",
+      title: "Beginner Rag Quilt Tutorial | The Easiest Quilt You’ll Ever Sew (No Binding, No Batting, No Stress!)",
+      url: trendingvideos[13].url
+    },
+    {
+      channel: "Missouri Star",
+      username: "@MissouriQuiltCo",
+      uploadDate: "Mar 9, 2025",
+      title: "How To Make a Prairie Twilight Lonestar Quilt - Free Quilting Tutorial",
+      url: trendingvideos[14].url
+    },                                                                                          
+  ];
+
+  // const organizeRef = refpage(myVideos);
+
+  // organizeRef.forEach((reference, index) => {
+  //   console.log(`${index + 1}. ${reference}`);
+  // });
+
+      const organizeRef = refpage(tubeVideos);
+
+    const refElement = document.querySelector('#ref');
+
+    refElement.innerHTML = organizeRef
+      .map((reference, index) => `<p>${index + 1}. ${reference}</p>`)
+      .join('');
+  
 }

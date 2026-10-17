@@ -1,3 +1,48 @@
+//template for references page
+
+// 1. The formatting function
+function generateYouTubeReferences(videoList) {
+  return videoList.map(video => {
+    // Destructure the properties from the video object
+    const { channel, uploadDate, title, url, username } = video;
+    
+    // Format the username display: "Channel Name [username]" or just "Channel Name"
+    const authorDisplay = username ? `${channel} [${username}]` : channel;
+    
+    // Combine everything into an APA 7th edition reference string
+    return `${authorDisplay}. (${uploadDate}). *${title}* [Video]. YouTube. ${url}`;
+  });
+}
+
+// 2. Your collection of YouTube video data
+const myVideos = [
+  {
+    channel: "Web Dev Simplified",
+    username: "WebDevSimplified",
+    uploadDate: "2020, January 23",
+    title: "JavaScript ES6 Arrow Functions Tutorial",
+    url: "https://youtube.com"
+  },
+  {
+    channel: "FreeCodeCamp.org",
+    username: "freecodecamp",
+    uploadDate: "2021, December 14",
+    title: "JavaScript Programming Full Course",
+    url: "https://youtube.com"
+  }
+];
+
+// 3. Run the function and log the results
+const formattedReferences = generateYouTubeReferences(myVideos);
+
+formattedReferences.forEach((reference, index) => {
+  console.log(`${index + 1}. ${reference}`);
+});
+
+
+
+
+
 
 // this doesen't look correct so I tested it and sure enough doesn't work
 const selectMenu = document.getElementById('videos');
